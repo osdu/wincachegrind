@@ -113,24 +113,27 @@ RootDir=
 IncludeVerInfo=1
 AutoIncBuild=1
 MajorVer=1
-MinorVer=1
+MinorVer=2
 Release=0
-Build=19
+Build=0
 Debug=0
 PreRelease=0
 Special=0
 Private=0
 DLL=0
-Locale=1033
-CodePage=1252
+Locale=2052
+CodePage=936
 [Version Info Keys]
 CompanyName=
 FileDescription=WinCacheGrind
-FileVersion=1.1.0.19
+FileVersion=1.2.0.0
 InternalName=WinCacheGrind
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=WinCacheGrind.exe
 ProductName=WinCacheGrind
-ProductVersion=1.1.0.0
-Comments=WinCacheGrind for AnmpServer
+ProductVersion=1.2.0.0
+Comments=
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
