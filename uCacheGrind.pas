@@ -841,14 +841,14 @@ begin
               CurFL := Uncompress('fl', Copy(S, 3 + 1, Length(S) - 3) )
             end else if Copy(S, 1, 3) = 'fn=' then begin
               CurFN := Uncompress('fn', Copy(S, 3 + 1, Length(S) - 3) );
-              if CurFL = '' then Error('Parser error: fl is not valid.');
-              if CurFN = '' then Error('Parser error: fn is not valid.');
+              if CurFL = '' then Error('·ÖÎöÆ÷´íÎó: fl is not valid.');
+              if CurFN = '' then Error('·ÖÎöÆ÷´íÎó: fn is not valid.');
               CurInst := CreateInstance(CurFN, CurFL); // TODO: SLOW!
               CurInst.ParserLine := ParserLine;
               Stack.Add(CurInst);
             end else if (Length(S) >= 3) and (S[1] in ['0'..'9']) then begin
               P := Pos(' ', S);
-              if P <= 0 then Error('Parser error: Invalid <line> <time> <???> statement.');
+              if P <= 0 then Error('·ÖÎöÆ÷´íÎó: Invalid <line> <time> <???> statement.');
               A := Copy(S, 1, P - 1);
               B := Copy(S, P + 1, Length(S) - P);
               // remove the "unknown", or whatever, if exists
@@ -858,7 +858,7 @@ begin
                 if LastInst = Main then
                   CurInst := Main
                 else
-                  Error('Parser error: Parsing '+ S +': Current instance is NULL.');
+                  Error('·ÖÎöÆ÷´íÎó: Parsing '+ S +': Current instance is NULL.');
               end;
               if CurBuf <> nil then begin
                 CurBuf^.Line := StrToInt(A);
@@ -867,7 +867,7 @@ begin
                 CurInst.SelfTime := StrToInt64(B) / 1000;
             end else if Copy(S, 1, 4) = 'cfn=' then begin
               // must have inst first
-              if CurInst = nil then Error('Parser error: Parsing '+ S +': Current instance is NULL.');
+              if CurInst = nil then Error('·ÖÎöÆ÷´íÎó: Parsing '+ S +': Current instance is NULL.');
               // get function name
               A := Uncompress('fn', Copy(S, 4 + 1, Length(S) - 4) );
               // add to call buffer
@@ -879,7 +879,7 @@ begin
               CurBuf^.ParserLine := ParserLine;
             end else if Copy(S, 1, 8) = 'summary:' then begin
               // we should have the main instance right here
-              if LastInst = nil then Error('Parser error: LastInst should contain main function instance now.');
+              if LastInst = nil then Error('·ÖÎöÆ÷´íÎó: LastInst should contain main function instance now.');
               FMain := LastInst;
               CurInst := nil;
               FSummaryExists := True;
@@ -935,7 +935,7 @@ begin
           if Assigned(OnLoadProgress) then begin
             if FileSize(F) > 0 then
               OnLoadProgress(Self, FilePos(F), FileSize(F),
-                Format('Parsing... %d%% complete.', [FilePos(F) * 100 div FileSize(F)]));
+                Format('·ÖÎöÖÐ... %d%% Íê³É.', [FilePos(F) * 100 div FileSize(F)]));
           end;
         end;
         // post
@@ -949,7 +949,7 @@ begin
         if Buffer.Count <> 0 then Error('Call buffer is not empty.');
         // when we reach here the stack should contain only sections
         // like the main function instance and exit procedures
-        if Stack.Count < 1 then Error('Parser error: At this point at least main instance is expected.');
+        if Stack.Count < 1 then Error('·ÖÎöÆ÷´íÎó: At this point at least main instance is expected.');
         FRoot := CreateInstance(Cmd, Cmd);
         FRoot.Func.Kind := fkRoot;
         for I := Stack.Count - 1 downto 0 do begin

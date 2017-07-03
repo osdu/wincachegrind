@@ -2,14 +2,14 @@ object fWait: TfWait
   Left = 937
   Top = 312
   BorderStyle = bsToolWindow
-  Caption = 'Please wait...'
+  Caption = '«Î…‘∫Û...'
   ClientHeight = 84
   ClientWidth = 409
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Microsoft YaHei'
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter

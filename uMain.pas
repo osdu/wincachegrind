@@ -311,6 +311,9 @@ begin
       'Web: http://ceefour.github.io/wincachegrind/'#13#10 +
       'E-mail: hendy@hendyirawan.com'#13#10 +
       #13#10 +
+      'WinCacheGrind for AnmpServer'#13#10 +
+      'AnmpServer: http://www.anmpserver.com'#13#10 +
+      #13#10 +
       'This program is licensed under GNU General Public License version v3.'#13#10 +
       'See LICENSE file for more information.', mtInformation, [mbOK], 0);
   finally
@@ -454,7 +457,7 @@ var
   ED: PExplorerData;
 begin
   sb.SimplePanel := True;
-  Application.Hint := 'Refreshing Explorer list. Please wait...';
+  Application.Hint := '正在刷新文件列表. 请稍后...';
   sb.Repaint;
   ClearExplorer;
   if Config.WorkingDir <> '' then begin
@@ -563,7 +566,7 @@ end;
 procedure TfMain.tUpdateStatusBarTimer(Sender: TObject);
 begin
   if Application.Hint = '' then
-    sb.SimpleText := Format('Allocated memory: %.0n bytes', [AllocMemSize * 1.0])
+    sb.SimpleText := Format('分配内存: %.0n KB', [AllocMemSize * 1.0 / 1024])
 end;
 
 procedure TfMain.OpenEditor(AFileName: string; AOwner: TComponent; Line: Integer);

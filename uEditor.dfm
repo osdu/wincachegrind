@@ -4,12 +4,12 @@ object fEditor: TfEditor
   Width = 320
   Height = 240
   ActiveControl = he
-  Caption = 'Editor'
+  Caption = '编辑器'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Microsoft YaHei'
   Font.Style = []
   FormStyle = fsMDIChild
   Icon.Data = {
@@ -120,22 +120,22 @@ object fEditor: TfEditor
     Left = 184
     Top = 60
     object aFileClose: TAction
-      Caption = 'Close'
-      Hint = 'Close|Closes the current file.'
+      Caption = '关闭'
+      Hint = 'Close|关闭当前文件.'
       ImageIndex = 5
       OnExecute = aFileCloseExecute
     end
     object aFileSave: TAction
-      Caption = 'Save'
-      Hint = 'Save|Saves the current file.'
+      Caption = '保存'
+      Hint = 'Save|保存当前文件.'
       ImageIndex = 22
       ShortCut = 16467
       OnExecute = aFileSaveExecute
       OnUpdate = aFileSaveUpdate
     end
     object aFileRevertToSaved: TAction
-      Caption = 'Revert to Saved'
-      Hint = 'Revert to Saved|Reloads the file and discards any changes.'
+      Caption = '还原到已保存'
+      Hint = 'Revert to Saved|重新加载文件并放弃任何更改.'
       ImageIndex = 21
       OnExecute = aFileRevertToSavedExecute
       OnUpdate = aFileRevertToSavedUpdate

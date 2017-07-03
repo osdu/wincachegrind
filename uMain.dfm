@@ -9,7 +9,7 @@ object fMain: TfMain
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Microsoft YaHei'
   Font.Style = []
   FormStyle = fsMDIForm
   Menu = mm
@@ -118,21 +118,21 @@ object fMain: TfMain
     Align = alBottom
     Columns = <
       item
-        Caption = 'File Name'
+        Caption = '文件名'
         Width = 160
       end
       item
-        Caption = 'Title'
+        Caption = '标题'
         Width = 360
       end
       item
         Alignment = taRightJustify
-        Caption = 'Modified'
+        Caption = '修改时间'
         Width = 110
       end
       item
         Alignment = taRightJustify
-        Caption = 'Size'
+        Caption = '文件大小'
         Width = 70
       end>
     HideSelection = False
@@ -974,8 +974,8 @@ object fMain: TfMain
     Left = 36
     Top = 80
     object miFile: TMenuItem
-      Caption = '&File'
-      Hint = 'Contains commands for working with files.'
+      Caption = '文件(&F)'
+      Hint = '包含用于处理文件的命令.'
       OnClick = miFileClick
       object Open1: TMenuItem
         Action = aFileOpen
@@ -1006,7 +1006,7 @@ object fMain: TfMain
       end
     end
     object View1: TMenuItem
-      Caption = '&View'
+      Caption = '查看(&V)'
       object Explorer1: TMenuItem
         Action = aViewExplorer
       end
@@ -1015,17 +1015,17 @@ object fMain: TfMain
       end
     end
     object ools1: TMenuItem
-      Caption = '&Tools'
+      Caption = '工具(&T)'
       GroupIndex = 200
-      Hint = 'Contains miscellaneous commands.'
+      Hint = '包含其他命令.'
       object Options1: TMenuItem
         Action = aToolsOptions
       end
     end
     object miWindow: TMenuItem
-      Caption = '&Window'
+      Caption = '窗口(&W)'
       GroupIndex = 200
-      Hint = 'Window|Contains commands for working with document windows.'
+      Hint = 'Window|包含用于处理文档窗口的命令.'
       OnClick = miWindowClick
       object Cascade1: TMenuItem
         Action = WindowCascade1
@@ -1053,9 +1053,9 @@ object fMain: TfMain
       end
     end
     object Help1: TMenuItem
-      Caption = '&Help'
+      Caption = '帮助(&H)'
       GroupIndex = 200
-      Hint = 'Displays help and other information.'
+      Hint = '显示帮助和其他信息.'
       object ReadMe1: TMenuItem
         Action = aHelpReadMe
       end
@@ -1077,16 +1077,16 @@ object fMain: TfMain
     StyleName = 'XP Style'
     object aFileOpen: TAction
       Category = 'File'
-      Caption = 'Open...'
-      Hint = 'Open|Opens a profiler document.'
+      Caption = '打开(&O)...'
+      Hint = 'Open|打开 profiler 文档.'
       ImageIndex = 0
       ShortCut = 16463
       OnExecute = aFileOpenExecute
     end
     object aFileClose: TAction
       Category = 'File'
-      Caption = 'Close'
-      Hint = 'Close|Closes the current document.'
+      Caption = '关闭(&C)'
+      Hint = 'Close|关闭当前文档.'
       ImageIndex = 5
       ShortCut = 16471
       OnExecute = aFileCloseExecute
@@ -1094,18 +1094,16 @@ object fMain: TfMain
     end
     object aFileCloseAll: TAction
       Category = 'File'
-      Caption = 'Close All'
-      Hint = 'Close All|Closes all open document windows.'
+      Caption = '关闭所有(&L)'
+      Hint = 'Close All|关闭所有打开的文档窗口.'
       ImageIndex = 6
       OnExecute = aFileCloseAllExecute
       OnUpdate = aFileCloseAllUpdate
     end
     object aFileReload: TAction
       Category = 'File'
-      Caption = 'Reload'
-      Hint = 
-        'Reload|Closes the current document and reopens it in the current' +
-        ' window.'
+      Caption = '重新载入(&R)'
+      Hint = 'Reload| 关闭当前文档，并在当前窗口中重新打开它'
       ImageIndex = 1
       ShortCut = 16466
       OnExecute = aFileReloadExecute
@@ -1113,50 +1111,50 @@ object fMain: TfMain
     end
     object aFileReloadAll: TAction
       Category = 'File'
-      Caption = 'Reload All'
-      Hint = 'Reload All|Reloads documents in all open windows.'
+      Caption = '重载所有(&E)'
+      Hint = 'Reload All|在所有打开的窗口中重新加载文档.'
       OnExecute = aFileReloadAllExecute
       OnUpdate = aFileReloadAllUpdate
     end
     object aFileExit: TAction
       Category = 'File'
-      Caption = 'Exit'
-      Hint = 'Exit|Exits this program.'
+      Caption = '退出(&X)'
+      Hint = 'Exit|退出程序.'
       ImageIndex = 7
       OnExecute = aFileExitExecute
     end
     object aHelpReadMe: TAction
       Category = 'Help'
-      Caption = 'View Read Me...'
-      Hint = 'View Read Me|Views the README.txt file.'
+      Caption = '查看 Read Me(&V)...'
+      Hint = 'View Read Me|查看 README.txt 文件.'
       ImageIndex = 4
       OnExecute = aHelpReadMeExecute
     end
     object aHelpLicense: TAction
       Category = 'Help'
-      Caption = 'View License...'
-      Hint = 'View License|Displays the GNU General Public License.'
+      Caption = '查看 License(&I)...'
+      Hint = 'View License|显示 GNU General Public License.'
       OnExecute = aHelpLicenseExecute
     end
     object aHelpAbout: TAction
       Category = 'Help'
-      Caption = 'About...'
-      Hint = 'About|Displays program information.'
+      Caption = '关于(&A)...'
+      Hint = 'About|显示程序信息.'
       ImageIndex = 2
       OnExecute = aHelpAboutExecute
     end
     object aToolsOptions: TAction
       Category = 'Tools'
-      Caption = 'Options...'
-      Hint = 'Options|Displays available configuration options.'
+      Caption = '选项(&O)...'
+      Hint = 'Options|显示可用的配置选项.'
       ImageIndex = 3
       ShortCut = 16464
       OnExecute = aToolsOptionsExecute
     end
     object aViewExplorer: TAction
       Category = 'View'
-      Caption = 'Explorer'
-      Hint = 'Explorer|Shows the Explorer pane.'
+      Caption = '资源管理器(&E)'
+      Hint = 'Explorer|显示资源管理器面板.'
       ImageIndex = 10
       ShortCut = 16453
       OnExecute = aViewExplorerExecute
@@ -1164,55 +1162,55 @@ object fMain: TfMain
     end
     object WindowCascade1: TWindowCascade
       Category = 'Window'
-      Caption = '&Cascade'
+      Caption = '层叠窗口(&C)'
       Enabled = False
       Hint = 'Cascade'
       ImageIndex = 17
     end
     object WindowTileHorizontal1: TWindowTileHorizontal
       Category = 'Window'
-      Caption = 'Tile &Horizontally'
+      Caption = '水平平铺(&H)'
       Enabled = False
       Hint = 'Tile Horizontal'
       ImageIndex = 18
     end
     object WindowTileVertical1: TWindowTileVertical
       Category = 'Window'
-      Caption = '&Tile Vertically'
+      Caption = '垂直平铺(&T)'
       Enabled = False
       Hint = 'Tile Vertical'
       ImageIndex = 19
     end
     object WindowArrange1: TWindowArrange
       Category = 'Window'
-      Caption = '&Arrange'
+      Caption = '整理窗口(&A)'
       Enabled = False
     end
     object WindowMinimizeAll1: TWindowMinimizeAll
       Category = 'Window'
-      Caption = '&Minimize All'
+      Caption = '最小化所有(&M)'
       Enabled = False
       Hint = 'Minimize All'
     end
     object aViewRefreshExplorer: TAction
       Category = 'View'
-      Caption = 'Refresh Explorer'
-      Hint = 'Refresh Explorer|Refreshes the Explorer file list.'
+      Caption = '刷新资源管理器(&R)'
+      Hint = 'Refresh Explorer|刷新资源管理器中的文件列表.'
       OnExecute = aViewRefreshExplorerExecute
       OnUpdate = aViewRefreshExplorerUpdate
     end
     object aExplorerOpen: TAction
       Category = 'File'
-      Caption = 'Open'
-      Hint = 'Open|Opens the selected file.'
+      Caption = '打开'
+      Hint = 'Open|打开所选文件.'
       ImageIndex = 0
       OnExecute = aExplorerOpenExecute
       OnUpdate = aExplorerOpenUpdate
     end
   end
   object od: TOpenDialog
-    Filter = 'Cachegrind files (cachegrind.out.*)|cachegrind.out.*'
-    Title = 'Open Profiler Document'
+    Filter = 'Cachegrind 文件 (cachegrind.out.*)|cachegrind.out.*'
+    Title = '打开 Profiler 文件'
     Left = 32
     Top = 152
   end

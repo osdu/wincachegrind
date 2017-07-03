@@ -4,14 +4,14 @@ object fOptions: TfOptions
   ActiveControl = pc
   BorderStyle = bsDialog
   BorderWidth = 8
-  Caption = 'Options'
+  Caption = '选项'
   ClientHeight = 280
   ClientWidth = 400
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Microsoft YaHei'
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
@@ -34,7 +34,7 @@ object fOptions: TfOptions
       Top = 8
       Width = 75
       Height = 25
-      Caption = 'OK'
+      Caption = '确定'
       Default = True
       TabOrder = 0
       OnClick = bOKClick
@@ -45,7 +45,7 @@ object fOptions: TfOptions
       Width = 75
       Height = 25
       Cancel = True
-      Caption = 'Cancel'
+      Caption = '取消'
       ModalResult = 2
       TabOrder = 1
     end
@@ -59,14 +59,14 @@ object fOptions: TfOptions
     Align = alClient
     TabOrder = 0
     object tsMain: TTabSheet
-      Caption = 'Main'
+      Caption = '主要'
       ImageIndex = 2
       object Label3: TLabel
         Left = 8
         Top = 8
         Width = 72
         Height = 13
-        Caption = 'Working folder:'
+        Caption = '工作目录:'
       end
       object deWorkingDir: TJvDirectoryEdit
         Left = 92
@@ -74,35 +74,35 @@ object fOptions: TfOptions
         Width = 297
         Height = 21
         DialogKind = dkWin32
-        DialogText = 'Browse for folder'
-        ButtonHint = 'Browse|Browses for a folder.'
+        DialogText = '浏览文件夹'
+        ButtonHint = 'Browse|浏览文件夹.'
         ButtonFlat = True
         TabOrder = 0
         Text = 'deWorkingDir'
       end
     end
     object tsDisplay: TTabSheet
-      Caption = 'Display'
+      Caption = '显示'
       object Label1: TLabel
         Left = 8
         Top = 8
         Width = 94
         Height = 13
-        Caption = 'Default time display:'
+        Caption = '默认时间显示:'
       end
       object Label4: TLabel
         Left = 196
         Top = 52
         Width = 50
         Height = 13
-        Caption = 'Threshold:'
+        Caption = '阈值:'
       end
       object Label5: TLabel
         Left = 328
         Top = 52
         Width = 56
         Height = 13
-        Caption = 'milliseconds'
+        Caption = '毫秒'
       end
       object cbTimeDisplay: TComboBox
         Left = 120
@@ -113,15 +113,15 @@ object fOptions: TfOptions
         ItemHeight = 13
         TabOrder = 0
         Items.Strings = (
-          'Milliseconds'
-          'Percentages')
+          '毫秒'
+          '百分比')
       end
       object cbShowFullPath: TCheckBox
         Left = 8
         Top = 32
         Width = 245
         Height = 17
-        Caption = 'Show full path as default'
+        Caption = '默认显示 full path'
         TabOrder = 1
       end
       object cbHideLibFuncs: TCheckBox
@@ -129,7 +129,7 @@ object fOptions: TfOptions
         Top = 72
         Width = 213
         Height = 17
-        Caption = 'Hide library functions as default'
+        Caption = '默认隐藏 library functions'
         TabOrder = 4
       end
       object cbHideFastFuncs: TCheckBox
@@ -137,7 +137,7 @@ object fOptions: TfOptions
         Top = 52
         Width = 169
         Height = 17
-        Caption = 'Hide fast functions as default'
+        Caption = '默认隐藏 fast functions'
         TabOrder = 2
       end
       object seFastThreshold: TJvSpinEdit
@@ -154,7 +154,7 @@ object fOptions: TfOptions
       end
     end
     object tsPrivacy: TTabSheet
-      Caption = 'Privacy'
+      Caption = '隐私'
       ImageIndex = 1
       DesignSize = (
         392
@@ -165,21 +165,21 @@ object fOptions: TfOptions
         Width = 381
         Height = 93
         Anchors = [akLeft, akTop, akRight]
-        Caption = 'Recent files'
+        Caption = '最近文件记录'
         TabOrder = 0
         object Label2: TLabel
           Left = 8
           Top = 68
           Width = 151
           Height = 13
-          Caption = 'Maximum number of recent files:'
+          Caption = '最大文件记录数量:'
         end
         object cbTrackMRU: TCheckBox
           Left = 8
           Top = 16
           Width = 365
           Height = 17
-          Caption = 'Track recently opened files'
+          Caption = '跟踪最近打开的文件'
           TabOrder = 0
         end
         object cbClearMRUOnExit: TCheckBox
@@ -187,7 +187,7 @@ object fOptions: TfOptions
           Top = 36
           Width = 161
           Height = 17
-          Caption = 'Clear recent list on exit'
+          Caption = '退出时清除文件记录'
           TabOrder = 1
         end
         object bClearMRU: TButton
@@ -195,7 +195,7 @@ object fOptions: TfOptions
           Top = 32
           Width = 125
           Height = 25
-          Caption = 'Clear recent list now'
+          Caption = '清除最近文件列表'
           TabOrder = 2
           OnClick = bClearMRUClick
         end
@@ -213,28 +213,28 @@ object fOptions: TfOptions
       end
     end
     object Editor: TTabSheet
-      Caption = 'Editor'
+      Caption = '编辑器'
       ImageIndex = 3
       object Label6: TLabel
         Left = 24
         Top = 16
         Width = 52
         Height = 13
-        Caption = 'Editor Path'
+        Caption = '编辑器路径'
       end
       object Label7: TLabel
         Left = 56
         Top = 72
         Width = 115
         Height = 13
-        Caption = '*only support notepad++'
+        Caption = '注意：仅支持 Notepad++'
       end
       object deEditorPath: TJvFilenameEdit
         Left = 96
         Top = 12
         Width = 273
         Height = 21
-        Filter = 'All files (*.*)|*.exe'
+        Filter = '所有文件 (*.*)|*.exe'
         TabOrder = 0
         Text = 'deEditorPath'
       end

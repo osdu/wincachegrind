@@ -106,7 +106,7 @@ end;
 procedure TfOptions.bClearMRUClick(Sender: TObject);
 begin
   Config.ClearMRU;
-  MessageDlg('Recent list cleared.', mtInformation, [mbOK], 0);
+  MessageDlg('最近访问记录已清除.', mtInformation, [mbOK], 0);
 end;
 
 end.

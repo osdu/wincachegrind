@@ -773,8 +773,8 @@ begin
   end;
   lvMerged.Invalidate;
   lMerged.Caption :=
-    ' Sum of total self time: '+ FormatMs(SumSelf) +' ('+ FormatPercent(SumSelfPercent) + ')'
-    + '   Sum of calls: '+ Format('%.0n', [SumCalls * 1.0]);
+    ' 总计自身时间: '+ FormatMs(SumSelf) +' ('+ FormatPercent(SumSelfPercent) + ')'
+    + '   调用次数: '+ Format('%.0n', [SumCalls * 1.0]);
 end;
 
 procedure TfDoc.RefreshLists;
@@ -809,7 +809,7 @@ begin
         Item.SubItems.Add(FormatPercent(Func.TotCumPercent));
       end;
     else
-      raise Exception.Create('Unknown time display option.');
+      raise Exception.Create('未知时间显示选项.');
     end;
     Item.SubItems.Add(Format('%.0n', [Func.InstanceCount * 1.0]));
     // set image
@@ -870,9 +870,9 @@ begin
   if tv.Selected <> nil then begin
     Inst := TProfInstance(tv.Selected.Data);
     lInfoName.Caption := Inst.Name;
-    lInfoFileName.Caption := 'File: '+ Inst.FileName;
-    lInfo.Caption := 'Self time: '+ FormatMs(Inst.SelfTime) + ' (' + FormatPercent(Inst.SelfPercent) + ')'
-      + '   Cumulative time: '+ FormatMs(Inst.CumTime) + ' (' + FormatPercent(Inst.CumPercent) + ')';
+    lInfoFileName.Caption := '文件: '+ Inst.FileName;
+    lInfo.Caption := '自身时间: '+ FormatMs(Inst.SelfTime) + ' (' + FormatPercent(Inst.SelfPercent) + ')'
+      + '   累积时间: '+ FormatMs(Inst.CumTime) + ' (' + FormatPercent(Inst.CumPercent) + ')';
     iInfo.Picture.Assign(nil);
     ilCacheGrind.GetBitmap(GetImageIndex(Inst.Kind), iInfo.Picture.Bitmap);
     pInfo.Visible := True;
@@ -908,7 +908,7 @@ begin
     tdMs: TimeDisplay := tdPercent;
     tdPercent: TimeDisplay := tdMs;
   else
-    raise Exception.Create('Unrecognize time display option.');
+    raise Exception.Create('无法识别的时间显示选项.');
   end;
 end;
 
@@ -1029,7 +1029,7 @@ procedure TfDoc.lvMergedInstancesColumnClick(Sender: TObject;
   Column: TListColumn);
 begin
   if Column.Index > Ord(High(TMergedInstancesSort)) then
-    MessageDlg('Sorting on this column is not supported.', mtInformation,
+    MessageDlg('不支持对此列进行排序.', mtInformation,
       [mbOK], 0)
   else
     MergedInstancesSort := TMergedInstancesSort(Column.Index);
@@ -1154,13 +1154,12 @@ var
 begin
   S := '';
   if not CacheGrind.SummaryExists then
-    S := S + 'Warning! This file does not contain a "summary:" line,'
-      + ' this usually means the file is not valid.'
-      + ' As of xdebug 2.0.0 beta 1, this can happen when you use'
-      + ' exit() or die() in your script.'#13#10#13#10;
-  S := S + 'Parser information:'#13#10;
-  S := S + 'Definition line: ' + Format('%.0n', [AInst.ParserLine * 1.0]) + #13#10;
-  S := S + 'Call line: ' + Format('%.0n', [AInst.ParserCallLine * 1.0]);
+    S := S + '警告！ 该文件不包含 "summary:" 行,'
+      + ' 这通常意味着文件无效. 从 Xdebug 2.0.0 beta 1 开始'
+      + ' 当您在脚本中使用exit() 或 die() 时，可能会发生这种情况.'#13#10#13#10;
+  S := S + '解析器信息:'#13#10;
+  S := S + '定义行: ' + Format('%.0n', [AInst.ParserLine * 1.0]) + #13#10;
+  S := S + '调用行: ' + Format('%.0n', [AInst.ParserCallLine * 1.0]);
   MessageDlg(S, mtInformation, [mbOK], 0);
 end;
 
@@ -1260,7 +1259,7 @@ begin
   // we must switch to parent (and more parents!!) if not found in current view
   while FListMerged.IndexOf(AFunc) < 0 do begin
     if tv.Selected.Parent = nil then
-      raise Exception.Create('Cannot find current function in the whole function list (possibly a bug in this program).');
+      raise Exception.Create('在整个函数列表中无法找到当前函数 (可能是程序中的一个 Bug).');
     SelectTreeNode(tv.Selected.Parent);
     // refresh lvMerged
     RefreshListMerged;

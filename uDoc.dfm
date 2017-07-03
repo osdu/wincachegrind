@@ -3,12 +3,12 @@ object fDoc: TfDoc
   Top = 292
   Width = 781
   Height = 448
-  Caption = 'Profiler Document'
+  Caption = 'Profiler 文档'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Height = -10
+  Font.Name = 'Microsoft YaHei'
   Font.Style = []
   FormStyle = fsMDIChild
   Icon.Data = {
@@ -320,11 +320,11 @@ object fDoc: TfDoc
           Caption = ' '
           TabOrder = 0
           object Label1: TLabel
-            Left = 32
+            Left = 25
             Top = 8
             Width = 23
             Height = 13
-            Caption = 'Fi&nd:'
+            Caption = '查找(&N)：'
             FocusControl = cbFind
           end
           object Image1: TImage
@@ -353,8 +353,8 @@ object fDoc: TfDoc
             Caption = 'lFind'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clRed
-            Font.Height = -11
-            Font.Name = 'MS Sans Serif'
+            Font.Height = -10
+            Font.Name = 'Microsoft YaHei'
             Font.Style = [fsBold]
             ParentFont = False
             ShowAccelChar = False
@@ -365,7 +365,7 @@ object fDoc: TfDoc
             Top = 8
             Width = 113
             Height = 17
-            Caption = '&Regular expression'
+            Caption = '正则表达式(&R)'
             TabOrder = 1
             OnClick = cbREClick
           end
@@ -420,8 +420,8 @@ object fDoc: TfDoc
         Caption = 'lInfoName'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'MS Sans Serif'
+        Font.Height = -10
+        Font.Name = 'Microsoft YaHei'
         Font.Style = [fsBold]
         ParentFont = False
         ShowAccelChar = False
@@ -1669,187 +1669,169 @@ object fDoc: TfDoc
     StyleName = 'XP Style'
     object aViewMs: TAction
       Category = 'Profiler'
-      Caption = 'Milliseconds'
+      Caption = '毫秒(&M)'
       GroupIndex = 1
-      Hint = 'Milliseconds|Displays time values as milliseconds.'
+      Hint = '毫秒|以毫秒显示时间值.'
       ImageIndex = 5
       OnExecute = aViewMsExecute
       OnUpdate = aViewMsUpdate
     end
     object aViewPercent: TAction
       Category = 'Profiler'
-      Caption = 'Percentages'
+      Caption = '百分比(&P)'
       GroupIndex = 1
-      Hint = 'Percentages|Displays time values as percentages.'
+      Hint = '百分比|以百分比显示时间值.'
       ImageIndex = 6
       OnExecute = aViewPercentExecute
       OnUpdate = aViewPercentUpdate
     end
     object aViewFullPath: TAction
       Category = 'Profiler'
-      Caption = 'Show Full Path'
-      Hint = 
-        'Show Full Path|Toggles between displaying the full path or filen' +
-        'ame only.'
+      Caption = '显示完整路径(&S)'
+      Hint = '显示完整路径|在显示完整路径或文件名之间切换'
       ImageIndex = 3
       OnExecute = aViewFullPathExecute
       OnUpdate = aViewFullPathUpdate
     end
     object aViewHideFastFuncs: TAction
       Category = 'Profiler'
-      Caption = 'Hide Fast Functions'
-      Hint = 'Hide Fast Functions|Removes fast functions from the lists.'
+      Caption = '隐藏 Fast Functions(&H)'
+      Hint = '隐藏 Fast Functions|从列表中删除快速函数.'
       ImageIndex = 17
       OnExecute = aViewHideFastFuncsExecute
       OnUpdate = aViewHideFastFuncsUpdate
     end
     object aViewHideLibFuncs: TAction
       Category = 'Profiler'
-      Caption = 'Hide Library Functions'
-      Hint = 
-        'Hide Library Functions|Toggles between showing and hiding librar' +
-        'y functions.'
+      Caption = '隐藏 Library Functions(&I)'
+      Hint = '隐藏 Library Functions|在显示和隐藏库函数之间切换.'
       ImageIndex = 2
       OnExecute = aViewHideLibFuncsExecute
       OnUpdate = aViewHideLibFuncsUpdate
     end
     object aViewGoToOpen: TAction
       Category = 'LBL'
-      Caption = 'Go To'
-      Hint = 'Go To|Views details about the selected item.'
+      Caption = '转到(&G)'
+      Hint = '转到|查看有关所选项目的详细信息.'
       ImageIndex = 11
       OnExecute = aViewGoToOpenExecute
       OnUpdate = aViewGoToOpenUpdate
     end
     object aViewGoToUpOneLevel: TAction
       Category = 'Profiler'
-      Caption = 'Up One Level'
-      Hint = 'Up One Level|Goes up one level.'
+      Caption = '上一级节点(&U)'
+      Hint = '上一级节点|转到上一级节点.'
       ImageIndex = 7
       OnExecute = aViewGoToUpOneLevelExecute
       OnUpdate = aViewGoToUpOneLevelUpdate
     end
     object aMergedInstancesGoTo: TAction
       Category = 'MergedInstances'
-      Caption = 'Go To'
-      Hint = 'Go To|Views details about this item.'
+      Caption = '转到'
+      Hint = '转到|查看有关此项目的详情.'
       ImageIndex = 11
       OnExecute = aMergedInstancesGoToExecute
       OnUpdate = aMergedInstancesGoToUpdate
     end
     object aTreeShowOverall: TAction
       Category = 'Tree'
-      Caption = 'Show Overall'
-      Hint = 'Show Overall|Shows all calls to this function.'
+      Caption = '显示 Overall(&S)'
+      Hint = '显示 Overall|显示对此函数的所有调用.'
       ImageIndex = 16
       OnExecute = aTreeShowOverallExecute
       OnUpdate = aTreeShowOverallUpdate
     end
     object aTreeOpenEditor: TAction
       Category = 'Tree'
-      Caption = 'Open in editor'
-      Hint = 
-        'Open in editor|Opens the file which contains this function call ' +
-        'in the built-in editor.'
+      Caption = '在编辑器中打开(&O)'
+      Hint = '在编辑器中打开|在内置编辑器中打开包含此函数调用的文件.'
       ImageIndex = 9
       OnExecute = aTreeOpenEditorExecute
       OnUpdate = aTreeOpenEditorUpdate
     end
     object aTreeShowInfo: TAction
       Category = 'Tree'
-      Caption = 'Show advanced information...'
-      Hint = 
-        'Show advanced information|Displays advanced information about th' +
-        'e selected item.'
+      Caption = '显示高级信息(&H)...'
+      Hint = 'Show advanced information|显示有关所选项目的高级信息.'
       ImageIndex = 10
       OnExecute = aTreeShowInfoExecute
       OnUpdate = aTreeShowInfoUpdate
     end
     object aLBLShowOverall: TAction
       Category = 'LBL'
-      Caption = 'Show Overall'
-      Hint = 'Show Overall|Shows all calls to this function.'
+      Caption = '显示 Overall(&S)'
+      Hint = '显示 Overall|显示对此函数的所有调用.'
       ImageIndex = 16
       OnExecute = aLBLShowOverallExecute
       OnUpdate = aLBLShowOverallUpdate
     end
     object aLBLOpenEditor: TAction
       Category = 'LBL'
-      Caption = 'Open in editor'
-      Hint = 
-        'Open in editor|Opens the file which contains this function call ' +
-        'in the built-in editor.'
+      Caption = '在编辑器中打开(&O)'
+      Hint = '在编辑器中打开|在内置编辑器中打开包含此函数调用的文件.'
       ImageIndex = 9
       OnExecute = aLBLOpenEditorExecute
       OnUpdate = aLBLOpenEditorUpdate
     end
     object aMergedInstancesOpenEditor: TAction
       Category = 'MergedInstances'
-      Caption = 'Open in editor'
-      Hint = 
-        'Open in editor|Opens the file which contains this function call ' +
-        'in the built-in editor.'
+      Caption = '在编辑器中打开'
+      Hint = '在编辑器中打开|在内置编辑器中打开包含此函数调用的文件.'
       ImageIndex = 9
       OnExecute = aMergedInstancesOpenEditorExecute
       OnUpdate = aMergedInstancesOpenEditorUpdate
     end
     object aMergedInstancesShowInfo: TAction
       Category = 'MergedInstances'
-      Caption = 'Show advanced information...'
-      Hint = 
-        'Show advanced information|Displays advanced information about th' +
-        'e selected item.'
+      Caption = '显示高级信息(&H)...'
+      Hint = '显示高级信息|显示有关所选项目的高级信息.'
       ImageIndex = 10
       OnExecute = aMergedInstancesShowInfoExecute
       OnUpdate = aMergedInstancesShowInfoUpdate
     end
     object aLBLShowInfo: TAction
       Category = 'LBL'
-      Caption = 'Show advanced information...'
-      Hint = 
-        'Show advanced information|Displays advanced information about th' +
-        'e selected item.'
+      Caption = '显示高级信息(&H)...'
+      Hint = '显示高级信息|显示有关所选项目的高级信息.'
       ImageIndex = 10
       OnExecute = aLBLShowInfoExecute
       OnUpdate = aLBLShowInfoUpdate
     end
     object aProfilerFind: TAction
       Category = 'Profiler'
-      Caption = 'Find'
-      Hint = 'Find|Finds functions containing the specified text.'
+      Caption = '查找(&F)'
+      Hint = '查找|查找包含指定文本的函数.'
       ImageIndex = 12
       ShortCut = 16454
       OnExecute = aProfilerFindExecute
     end
     object aTreeGoToRoot: TAction
       Category = 'Tree'
-      Caption = 'Go To Root'
-      Hint = 'Go To Root|Selects the root node.'
+      Caption = '转到根节点(&O)'
+      Hint = '转到根节点|选择根节点.'
       ImageIndex = 13
       OnExecute = aTreeGoToRootExecute
       OnUpdate = aTreeGoToRootUpdate
     end
     object aTreeExpand: TAction
       Category = 'Tree'
-      Caption = 'Expand'
-      Hint = 'Expand|Expands the selected node.'
+      Caption = '展开(&E)'
+      Hint = '展开|展开所选节点.'
       ImageIndex = 14
       OnExecute = aTreeExpandExecute
       OnUpdate = aTreeExpandUpdate
     end
     object aTreeExpandAll: TAction
       Category = 'Tree'
-      Caption = 'Expand All'
-      Hint = 
-        'Expand All|Expands the selected node and all all its child nodes' +
-        '.'
+      Caption = '展开全部(&X)'
+      Hint = '展开全部|展开所选节点及其所有子节点.'
       OnExecute = aTreeExpandAllExecute
       OnUpdate = aTreeExpandAllUpdate
     end
     object aTreeCollapse: TAction
       Category = 'Tree'
-      Caption = 'Collapse'
-      Hint = 'Collapse|Collapses the selected node.'
+      Caption = '折叠(&C)'
+      Hint = '折叠|折叠所选节点.'
       ImageIndex = 15
       OnExecute = aTreeCollapseExecute
       OnUpdate = aTreeCollapseUpdate
@@ -1860,7 +1842,7 @@ object fDoc: TfDoc
     Left = 68
     Top = 96
     object View1: TMenuItem
-      Caption = '&Profiler'
+      Caption = '分析器(&P)'
       GroupIndex = 100
       object Find1: TMenuItem
         Action = aProfilerFind
