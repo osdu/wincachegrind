@@ -7,7 +7,7 @@ object fDoc: TfDoc
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -10
+  Font.Height = -12
   Font.Name = 'Microsoft YaHei'
   Font.Style = []
   FormStyle = fsMDIChild
